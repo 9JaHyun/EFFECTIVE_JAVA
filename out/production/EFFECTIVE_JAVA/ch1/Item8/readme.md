@@ -1,0 +1,1 @@
+# Item8 finalizer(), cleaner() 사용을 피하라
