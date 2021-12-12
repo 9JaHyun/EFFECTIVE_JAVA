@@ -1,4 +1,4 @@
-# equals()를 재정의하려거든 hashCode()도 재정의하라.
+# `equals()`를 재정의하려거든 `hashCode()`도 재정의하라.
 앞에서 잠깐 설명했지만, `hashCode`를 비교하는 `HashMap`이나 `HashSet`같은 컬렉션의 원소로 사용될 때 오류를 방지하기 위해 
 `hashCode()` 역시 같이 재정의를 해주어야 합니다.  
 이전장의 `Member` 클래스를 살짝 가져와 `hashCode()`의 재정의 필요성을 몸소 느껴봅시다!

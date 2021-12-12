@@ -6,20 +6,22 @@ public final class Complex{
     public static final Complex ONE = new Complex(1, 0);    // 실수 1
     public static final Complex I = new Complex(0, 1);      // 허수 i
 
-    // 3, 4. 모든 필드를 final로 선언
+    // 방법 3, 4. 모든 필드를 final로 선언
     private final double re;
     private final double im;
 
+    // 모든 생성자를 private or package-private 로 선언
     private Complex(double re, double im) {
         this.re = re;
         this.im = im;
     }
 
+    // 그 후 정적 팩토리 제공
     public static Complex of(double re, double im) {
         return new Complex(re, im);
     }
 
-    // 접근자 메서드
+    // 접근자 메서드 (가변 필드가 아니기 때문에 이것 까지는 괜찮다.)
     public double getRe() {
         return re;
     }

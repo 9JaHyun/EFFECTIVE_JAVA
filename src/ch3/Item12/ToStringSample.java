@@ -6,10 +6,6 @@ import java.util.Scanner;
 public class ToStringSample {
     public static void main(String[] args) {
         Member member = new Member("Kim", 20);
-        Scanner sc = new Scanner(System.in);
-        sc.nextLine();
-        BufferedReader bufferedReader;
-        bufferedReader.
-        System.out.println(member);
+
     }
 }
