@@ -15,5 +15,8 @@ public class MemberHashCodeTestSample {
         hashMap.put(member3, 3);
 
         System.out.println(hashMap.values());
+        hashMap.values().iterator()
+                .forEachRemaining(System.out::println);
+
     }
 }

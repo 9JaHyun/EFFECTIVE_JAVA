@@ -146,8 +146,26 @@ public class TestSample {
 ## 로컬(지역) 클래스
 지역변수를 선언할 수 있는 곳이라면 실질적으로 어디서든 선언이 가능합니다. 스코프 역시 지역변수와 동일한 스코프를 가집니다.
 말이 어려운데 지역 변수를 선언할 수 있는 곳은 결국 메서드 내부입니다. 그렇다는 건 **메서드 내부에서 정의한 클래스**를 말합니다. 
-생소한 만큼 가장 드물게 사용되는 방식입니다. 보통 `콜백`으로 많이 사용됩니다.
+생소한 만큼 가장 드물게 사용되는 방식입니다. 보통 비동기 처리를 위해 스레드 객체를 생성할 때으로 많이 사용됩니다.
+```java
+public class LocalClass {
+    private String field1;
+    private String field2;
 
+    public void doSomething() {
+        String localField1 = "Hello";
+        String localField2 = "LocalClass";
+        class DoSomethingLocalClass {
+            String plusString(String str1, String str2) {
+                return str1 + " " + str2;
+            }
+        }
+        DoSomethingLocalClass localClass = new DoSomethingLocalClass();
+        String s = localClass.plusString(localField1, localField2);
+        System.out.println(s);
+    }
+}
+```
 ## 결론
 * 메서드 밖에서 사용해야 하거나, 메서드 안에서 정의하기에 너무 길다면, **멤버 클래스**
   * 멤버 클래스의 인스턴스가 **바깥 인스턴스를 참조한다면 비정적**

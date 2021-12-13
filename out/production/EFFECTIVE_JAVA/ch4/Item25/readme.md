@@ -5,4 +5,43 @@
 
 ## 결론
 * 소스 파일 하나에는 반드시 톱레벨 클래스를 하나만 담자.
-* 굳이 여러개 담으려면 정적 멤버 클래스로 담는 것을 추천.
+```java
+class Utensil{
+    static final String NAME = "pan";
+}
+
+class Dessert{
+    static final String NAME = "cake";
+}
+```
+가 아닌...
+
+```java
+public class Utensil{
+    static final String NAME = "pan";
+}
+```
+```java
+class Dessert{
+    static final String NAME = "cake";
+}
+```
+이렇게 선언하자.
+
+* 굳이 여러개 담으려면 정적 멤버 클래스로 담는 것을 추천한다.
+```java
+public class TopLevelTest {
+    public static void main(String[] args) {
+        // 집기(Utensil), 디저트(Dessert) 클래스가 Utensil.java 파일 하나에 정의되어 있는 경우
+        System.out.println(MemberUtensil.NAME + MemberDessert.NAME);
+    }
+
+    private static class MemberUtensil {
+        static final String NAME = "pan";
+    }
+
+    private static class MemberDessert {
+        static final String NAME = "cake";
+    }
+}
+```
